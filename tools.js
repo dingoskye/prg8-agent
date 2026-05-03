@@ -5,6 +5,10 @@ export const retrieve = tool(
     async ({ query }) => {
         console.log("🔧 now searching the document store")
         const relevantDocs = await vectorStore.similaritySearch(query, 2)
+
+        const sources = [...new Set(relevantDocs.map(doc => doc.metadata.source))];
+        console.log(`   → Found ${relevantDocs.length} relevant chunks from: ${sources.join(", ")}`);
+
         const context = relevantDocs.map(doc => doc.pageContent).join("\n\n")
         return context
     },

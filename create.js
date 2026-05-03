@@ -16,7 +16,7 @@ const agent = createAgent({model, system: "Je bent een ns reisplanner" });
 
 
 // laad tekstbestand
-const loader = new TextLoader("./public/huisregelsNS.txt")
+const loader = new TextLoader("./public/productvoorwaardenNS.txt")
 const docs = await loader.load()
 
 // opsplitsen

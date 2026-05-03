@@ -6,5 +6,5 @@ const vectorStore = await FaissStore.load("./documents", embeddings);
 console.log("✅ vector store loaded!")
 
 // zoek relevante documenten
-const result = await vectorStore.similaritySearch("Wie waren de gebroeders Grimm", 1);
+const result = await vectorStore.similaritySearch("Wat zijn de huisregels van de ns", 1);
 console.log(result);
